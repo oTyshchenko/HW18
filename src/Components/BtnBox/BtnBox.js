@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
-import Btn from './Btn/Btn';
-import './BtnBox.scss';
+import Btn from './btn/btn.js';
+import './btnBox.scss';
 
 class BtnBox extends Component {
   render() {
     const btnArr = ['AC', '+/-', '%', '/', '7', '8', '9', '*', '4', '5', '6', '-', '1', '2', '3', '+', '0', '.', '='];
-    const operators = ['-', '+', '*', '/', '='];
+    const operators = ['-', '+', '*', '/'];
+    const topRow = ['AC', '+/-', '%'];
     let cls;
     return (
       <div className='btn-box'>
         {btnArr.map((el) => {
-          (el === '0') ? cls = 'btn long-btn' : (operators.includes(el)) ? cls = 'btn orange-btn' : cls = 'btn';
-          
+          (el === '0') ? cls = 'btn long-btn' :
+            (operators.includes(el)) ? cls = 'btn orange-btn' :
+              (topRow.includes(el)) ? cls = 'btn top-btn' :
+                (el === '=') ? cls = 'btn equally-btn' : cls = 'btn';
+
           return (
             <Btn
               key={el}

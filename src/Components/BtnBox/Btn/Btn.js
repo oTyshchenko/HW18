@@ -3,8 +3,6 @@ import './btn.scss';
 
 class Btn extends Component {
   btnClick = () => {
-
-
     this.props.changeDisplay(this.props.value);
   }
 

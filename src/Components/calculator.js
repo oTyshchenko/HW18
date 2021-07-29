@@ -125,6 +125,9 @@ class Calculator extends Component {
           } else {
             result = String(+this.state.firstNumber * +this.state.secondNumber);
           }
+
+
+          
         } else if (this.state.operator === '/') {
           if (this.state.firstNumber.indexOf('%') !== -1 && this.state.secondNumber.indexOf('%') !== -1) {
             result = String((parseFloat(this.state.firstNumber) / 100) / (parseFloat(this.state.secondNumber) / 100));

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Btn from './btn/btn.js';
-import './btnBox.scss';
 
 class BtnBox extends Component {
   render() {
